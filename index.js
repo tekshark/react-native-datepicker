@@ -1,15 +1,8 @@
 import React, {Component} from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  PanResponder
-} from 'react-native';
-import DatePicker from './datepicker.js';
+import {AppRegistry, StyleSheet, Text, View, PanResponder} from 'react-native';
+import DatePicker from './datepicker';
 
 class datepicker extends Component {
-
   constructor(props) {
     super(props);
 
@@ -17,18 +10,24 @@ class datepicker extends Component {
       date: '',
       time: '20:00',
       datetime: '2016-05-05 20:00',
-      datetime1: '2016-05-05 20:00'
+      datetime1: '2016-05-05 20:00',
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this._panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: (e) => {console.log('onStartShouldSetPanResponder'); return true;},
-      onMoveShouldSetPanResponder: (e) => {console.log('onMoveShouldSetPanResponder'); return true;},
+      onStartShouldSetPanResponder: (e) => {
+        console.log('onStartShouldSetPanResponder');
+        return true;
+      },
+      onMoveShouldSetPanResponder: (e) => {
+        console.log('onMoveShouldSetPanResponder');
+        return true;
+      },
       onPanResponderGrant: (e) => console.log('onPanResponderGrant'),
       onPanResponderMove: (e) => console.log('onPanResponderMove'),
       onPanResponderRelease: (e) => console.log('onPanResponderRelease'),
-      onPanResponderTerminate: (e) => console.log('onPanResponderTerminate')
+      onPanResponderTerminate: (e) => console.log('onPanResponderTerminate'),
     });
   }
 
@@ -49,7 +48,9 @@ class datepicker extends Component {
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
           iconSource={require('./google_calendar.png')}
-          onDateChange={(date) => {this.setState({date: date});}}
+          onDateChange={(date) => {
+            this.setState({date});
+          }}
         />
         <Text style={styles.instructions}>date: {this.state.date}</Text>
         <DatePicker
@@ -60,7 +61,9 @@ class datepicker extends Component {
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
           minuteInterval={10}
-          onDateChange={(time) => {this.setState({time: time});}}
+          onDateChange={(time) => {
+            this.setState({time});
+          }}
         />
         <Text style={styles.instructions}>time: {this.state.time}</Text>
         <DatePicker
@@ -71,7 +74,9 @@ class datepicker extends Component {
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
           showIcon={false}
-          onDateChange={(datetime) => {this.setState({datetime: datetime});}}
+          onDateChange={(datetime) => {
+            this.setState({datetime});
+          }}
         />
         <Text style={styles.instructions}>datetime: {this.state.datetime}</Text>
         <DatePicker
@@ -86,16 +91,20 @@ class datepicker extends Component {
               position: 'absolute',
               left: 0,
               top: 4,
-              marginLeft: 0
+              marginLeft: 0,
             },
             dateInput: {
-              marginLeft: 36
-            }
+              marginLeft: 36,
+            },
           }}
           minuteInterval={10}
-          onDateChange={(datetime) => {this.setState({datetime1: datetime});}}
+          onDateChange={(datetime) => {
+            this.setState({datetime1: datetime});
+          }}
         />
-        <Text style={styles.instructions}>datetime: {this.state.datetime1}</Text>
+        <Text style={styles.instructions}>
+          datetime: {this.state.datetime1}
+        </Text>
       </View>
     );
   }
@@ -106,18 +115,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10
+    margin: 10,
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5
-  }
+    marginBottom: 5,
+  },
 });
 
 AppRegistry.registerComponent('datepicker', () => datepicker);
