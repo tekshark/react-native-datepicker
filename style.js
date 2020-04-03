@@ -71,6 +71,9 @@ const style = StyleSheet.create({
   disabled: {
     backgroundColor: '#eee',
   },
+  flex: {
+    flex: 1,
+  },
 });
 
 export default style;
