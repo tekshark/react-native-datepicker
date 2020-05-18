@@ -1,16 +1,14 @@
 {
-  "name": "tekshark-react-native-datepicker",
-  "version": "1.8.1",
+  "name": "react-native-datepicker",
+  "version": "1.7.3",
   "description": "React Native DatePicker component for both Android and iOS, useing DatePickerAndroid, TimePickerAndroid and DatePickerIOS",
   "main": "datepicker.js",
   "scripts": {
-    "start": "react-native start",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest --coverage",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "lint": "eslint . --fix"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -27,36 +25,28 @@
   },
   "homepage": "https://github.com/xgfe/react-native-datepicker#readme",
   "dependencies": {
-    "@react-native-community/datetimepicker": "^2.3.1",
-    "moment": "^2.24.0"
+    "moment": "^2.22.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/runtime": "^7.9.2",
-    "babel-jest": "25.2.4",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
     "coveralls": "^2.11.9",
     "cz-conventional-changelog": "^1.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "^6.8.0",
-    "prettier": "^2.0.2",
-    "@react-native-community/eslint-config": "^1.0.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^3.0.0",
-    "eslint-plugin-react-native": "^3.8.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
     "inquirer": "^3.0.5",
-    "jest": "25.2.4",
+    "jest": "21.2.1",
     "jsdom": "^11.3.0",
     "jsdom-global": "^3.0.2",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "pre-commit": "^1.2.2",
-    "react": "16.11.0",
-    "react-native": "0.62.0",
-    "react-test-renderer": "16.11.0"
+    "pre-commit": "^1.1.3",
+    "react": "16.0.0-beta.5",
+    "react-dom": "16.0.0-beta.5",
+    "react-native": "0.49.3",
+    "react-test-renderer": "16.0.0-beta.5"
   },
   "config": {
     "commitizen": {
